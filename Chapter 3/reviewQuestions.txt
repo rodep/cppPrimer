@@ -1,0 +1,112 @@
+﻿Chapter 3 review questions
+======================================================
+
+1 How would you declare each of the following?
+
+a. actors is an array of 30 char.
+
+char actor[30];
+
+b. betsie is an array of 100 short.
+
+short betsie[100];
+
+c. chuck is an array of 13 float.
+float chuck[13];
+
+d. dipsea is an array of 64 long double
+long double dipsea[64];
+
+
+2. Declare an array of five ints and initialize
+ it to the first five odd positive integers
+
+ int  oddly[5] = {1,3, 5, 7, 9};
+
+ 3. Write a statement that assigns the sum of the first and last elements of the array in
+    Question 2 to the variable even.
+
+    int even = oddly[0] + oddly[4];
+
+ 4. Write a statement that displays the value of the second element in the float array
+    ideas
+
+    cout << ideas[1] << endl;
+
+5. Declare an array of char and initialize it to the string “cheeseburger”
+
+  char sandwich[13] = "cheeseburger";
+  char sandwich[] = " cheeseburger"; //let the compiler count elemets
+
+
+6.Devise a structure declaration that describes a fish. The structure should include the
+kind, the weight in whole ounces, and the length in fractional inches
+
+    struct fish {
+
+    char kind[50] = new char[];
+
+
+    };
+
+
+11. Write a code fragment that asks the user to enter a positive integer and then creates a dynamic array of that many ints.
+
+
+unsigned int intValue = 0;
+
+cout << "Enter an integer value: " << endl;
+cin >> intValue;
+
+int * intArray= new int[intValue];
+cout << *intArray << endl;
+
+
+
+12. Is the following valid code? If so, what does it print? 
+
+cout << (int *) “Home of the jolly bytes”
+
+Yes, it is valid. The expression “Home of the jolly bytes” is a string constant; hence it evaluates as the address of the beginning of the string. 
+The cout object interprets the address of a char as an invitation to print a string, but the type cast (int *) converts 
+the address to type pointer-to-int, which is then printed as an address. In short, the statement prints the address of the string.
+
+
+
+13. Write a code fragment that dynamically allocates a structure of the type described in Question 6 and then reads a value for the kind member of the structure. 
+
+
+   struct fish {
+ 
+     char kind[20];
+     int weight;
+     float lenght;   
+
+    };
+
+
+  fish *pole = new fish;
+
+  cout << "enter the kind of fish";
+  cin >> pole -> kind;
+
+
+
+14. Listing 4.6 illustrates a problem created by following numeric input with line-oriented string input. How would replacing this: 
+
+cin.getline(address,80); 
+
+with this: 
+
+cin >> address; affect the working of this program?
+
+
+Using cin >> address causes a program to skip over whitespace until it finds nonwhitespace. 
+It then reads characters until it encounters whitespace again. 
+Thus, it will skip over the newline following the numeric input, avoiding that problem. On the other hand, it will read just a single word, not an entire line.
+
+
+
+
+
+
