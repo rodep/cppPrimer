@@ -53,6 +53,13 @@ int main()
     cin >> investmentCleo; 
     cout << "\n";
 
+    do {
+
+        calculateDaphneInterests(investmentDaphne);
+        //accumulate
+    }
+   
+       while();//while interestrateCle > interestRateDaphne
     
 
     return 0;
