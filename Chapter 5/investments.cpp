@@ -13,54 +13,53 @@ $105, or $5.25, and so on. Write a program that finds how many years it takes fo
 value of Cleo’s investment to exceed the value of Daphne’s investment and then displays
 the value of both investments at that time.*/
 
+//Logic not working
+
 #include <iostream>
 #include <cstring>
 #include <cmath>
 
 using namespace std;
 
- float calculateDaphneInterests(float investment)
+ float calculateDaphneInvestment(float investment)
 {
-
-    float interest = 0;
-
+    float interest = 0.0;
     interest = 0.10 * investment;
-
+    
     return interest;
 }
 
- float calculateCleoInterests(int investment)
+ float calculateCleoInvestment(int investment)
 {
-
-    float interest = investment;
-
-    interest = 0.05 * interest;
+    float interest = 0.0;
+    interest = 0.05 * investment;
 
     return interest;
 }
 
 int main()
 { 
+
     float investmentDaphne = 0.0;
     float investmentCleo = 0.0;
-
-    cout << "Type the investment in Daphne account: " << "\n";
-    cin >> investmentDaphne; 
-    cout << "\n";
-
-
-    cout << "Type the investment in Cleo account: " << "\n";
-    cin >> investmentCleo; 
-    cout << "\n";
-
-    do {
-
-        calculateDaphneInterests(investmentDaphne);
-        //accumulate
-    }
+    float investment = 0.0;
+    int years = 0;
    
-       while();//while interestrateCle > interestRateDaphne
-    
+    cout << "Type the investment value: " << "\n";
+    cin >> investment; 
+    cout << "\n";
+
+    investmentCleo = investment;
+
+    while(investmentDaphne < investmentCleo){
+
+    investmentDaphne =  investment + calculateDaphneInvestment(investment);
+    investmentCleo = investment + calculateCleoInvestment(investment);
+    years = years ++;
+
+    }    
+
+    cout << "Cleo investment will surpass Daphne investments in " << years << " years";
 
     return 0;
 }
