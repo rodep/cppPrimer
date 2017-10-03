@@ -13,7 +13,7 @@ $105, or $5.25, and so on. Write a program that finds how many years it takes fo
 value of Cleo’s investment to exceed the value of Daphne’s investment and then displays
 the value of both investments at that time.*/
 
-//Logic not working
+//It's working but must check logic, why value stucks on 26 years?
 
 #include <iostream>
 #include <cstring>
@@ -39,27 +39,42 @@ using namespace std;
 
 int main()
 { 
-
     float investmentDaphne = 0.0;
     float investmentCleo = 0.0;
     float investment = 0.0;
-    int years = 0;
+    int years = 1;
    
-    cout << "Type the investment value: " << "\n";
+    cout << "Type the investment value: " << " ";
     cin >> investment; 
     cout << "\n";
+    cout << "----------------------------------------------------------------" << "\n";
 
-    investmentCleo = investment;
-
-    while(investmentDaphne < investmentCleo){
 
     investmentDaphne =  investment + calculateDaphneInvestment(investment);
     investmentCleo = investment + calculateCleoInvestment(investment);
-    years = years ++;
+    cout << "Year "<< years <<"\n";
+    cout << "----------------------------------------------------------------" << "\n";
+    cout << "Daphne: " << investmentDaphne << "\n";
+    cout <<"Cleo: " << investmentCleo << "\n";
+    cout << "\n";
+
+    while(investmentDaphne > investmentCleo){
+    
+    investmentDaphne =  investmentDaphne + calculateDaphneInvestment(investment);
+    investmentCleo = investmentCleo + calculateCleoInvestment(investmentCleo);
+    years = years + 1 ;
+
+    cout << "Year "<< years <<"\n";
+    cout << "----------------------------------------------------------------" << "\n";
+    cout << "Daphne: " << investmentDaphne << "\n";
+    cout <<"Cleo: " << investmentCleo << "\n";
+    cout << "\n";
 
     }    
-
-    cout << "Cleo investment will surpass Daphne investments in " << years << " years";
+    cout << "----------------------------------------------------------------" << "\n";
+    cout << "Cleo investment will surpass Daphne investments in " << years << " years" << "\n";    
+    cout << "Daphne: " << investmentDaphne << "\n";
+    cout <<"Cleo: " << investmentCleo << "\n";
 
     return 0;
 }
