@@ -26,7 +26,7 @@ int main(){
         months[i] = numberOfBooks;
         totalOfSales = totalOfSales + numberOfBooks;
 
-    }
+    }git staus
         cout << "\n";
         cout <<"The total of books sold in the year was: " << totalOfSales;
     
