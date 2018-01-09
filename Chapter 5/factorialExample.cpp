@@ -6,7 +6,7 @@
 
   const int ArSize = 16;  // example of external declaration
 
-  int main(){
+  int main() {
 
   double factorials[ArSize];
 
@@ -19,5 +19,5 @@
   for (i = 0; i < ArSize; i++)
   cout << i << "! =" << factorials[i] << endl;
 
-    return 0;
+   return 0;
  }
