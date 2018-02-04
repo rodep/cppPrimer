@@ -15,7 +15,9 @@ int main() {
 int numberOfBooks = 0;
 int totalOfSales = 0;
 int yearSalesMonthly = 0;
-string months[12] = {"January","February ","March ","April ","May","June","July","August","September","October","November","December"};
+
+int salesByYear [13][4];
+string months[13] = {"January","February ","March ","April ","May","June","July","August","September","October","November","December"};
 
 
 
@@ -26,26 +28,26 @@ cout << "---------------------------------------------" << "\n";
 cin >> yearSalesMonthly;
 cout << "\n";
 
-     for(int i = 0; i < 12; i++){
-       
-        //why am I getting weird values the second time I iterate the month array?
-        cout << "Please type the number of books sold in " << months[i] << ": ";
+    
+     for(int month = 0; month < 12; month++){
+
+        cout << "Please type the number of books sold in " << months[month] << ": ";
         cin >> numberOfBooks;
-        months[i] = numberOfBooks;
+        salesByYear[year][month] = numberOfBooks;
         totalOfSales = totalOfSales + numberOfBooks;
         
-        cout << "\n";
-
     }
+
         cout << "\n";
         cout <<" The total of books sold in the year " << yearSalesMonthly << " was: " << totalOfSales << "\n";
         totalOfSales = 0;
         cout << "\n";
 
-        
-}
- 
 
+}
+       
+
+  
     return 0;
 }
 
