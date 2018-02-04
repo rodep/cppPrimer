@@ -13,11 +13,12 @@ using namespace std;
 int main() {
 
 int numberOfBooks = 0;
-int totalOfSales = 0;
+int totalOfSalesMonth = 0;
+int totalSaleYears = 0;
 int yearSalesMonthly = 0;
 
 int salesByYear [13][4];
-string months[13] = {"January","February ","March ","April ","May","June","July","August","September","October","November","December"};
+string months[12] = {"January","February ","March ","April ","May","June","July","August","September","October","November","December"};
 
 
 
@@ -33,21 +34,25 @@ cout << "\n";
 
         cout << "Please type the number of books sold in " << months[month] << ": ";
         cin >> numberOfBooks;
+
         salesByYear[year][month] = numberOfBooks;
-        totalOfSales = totalOfSales + numberOfBooks;
+        totalOfSalesMonth = totalOfSalesMonth + numberOfBooks;
         
     }
-
         cout << "\n";
-        cout <<" The total of books sold in the year " << yearSalesMonthly << " was: " << totalOfSales << "\n";
-        totalOfSales = 0;
-        cout << "\n";
+        cout <<"    The total of books sold in the year " << yearSalesMonthly << " was " << totalOfSalesMonth << "\n" << "\n";
+        totalSaleYears = totalSaleYears + totalOfSalesMonth;
+        totalOfSalesMonth = 0;
 
+       totalSaleYears = totalSaleYears + totalOfSalesMonth;
 
 }
-       
+ 
+cout << "--------------------------------------------" << "\n"; 
+cout << "The total of books sold in all years is " << totalSaleYears << "\n" << "\n"; 
 
-  
+
+
     return 0;
 }
 
