@@ -19,53 +19,49 @@ Here is your collection:
 1952 Hudson Hornet
 1951 Kaiser  */
 
-#include <iostream> 
-#include <cstring> 
+#include <iostream>
+#include <cstring>
 #include <cmath>
 
 using namespace std;
 
 struct car
 {
-string make;
-int yearBuilt;
-
+    string make;
+    int yearBuilt;
 };
 
-int main() {
+int main()
+{
 
-int cars = 0;
+    int cars = 0;
 
-cout << "How many cars do you wish to catalog? ";
-cin >> cars;
-cout << "\n";
+    cout << "How many cars do you wish to catalog? ";
+    cin >> cars;
+    cout << "\n";
 
-/*Declare array as a pointer, allocate with new
-To create a variable that will point to a dynamically allocated array, declare it as a pointer to the element type. For example,
-int* a = NULL;  // pointer to an int, intiallly to nothing.*/  
-//http://www.fredosaurus.com/notes-cpp/newdelete/50dynamalloc.html#:~:text=Declare%20array%20as%20a%20pointer,an%20int%2C%20intiallly%20to%20nothing.
-car * dynamicArray = new car[cars];
+    car *dynamicArray = new car[cars]; //beware where you declare this array. If you declare it before the user cin giving me an array with 1 position.
 
+    //iterate through our dynamic array
+    for (int i = 0; i < cars; i++)
+    {
 
-//iterate through our dynamic array
-for(int i = 0; i < cars; i++){
+        cout << "For car # " << i + 1 << endl;
+        cout << "Please enter the make: ";
+        cin >> dynamicArray[i].make;
+        cout << "Please enter the year made: ";
+        cin >> dynamicArray[i].yearBuilt;
+    }
 
-cout << "For car # "<< i+1 << endl;
-cout << "Please enter the make: ";
-cin >> dynamicArray[i].make;
-cout << "Please enter the year made: ";
-cin >> dynamicArray[i].yearBuilt;
-}
+    //output our collection
+    cout << "Here is your collection: " << endl;
+    for (int i = 0; i < cars; i++)
+    {
+        cout << dynamicArray[i].yearBuilt << " " << dynamicArray[i].make << endl;
+    }
 
-//output our collection
-cout << "Here is what is in your collection: " << endl;
-for(int i = 0; i < cars; i++){
-    cout << dynamicArray[i].yearBuilt << " "<< dynamicArray[i].make << endl;
-}
+    //clean dynamic array
+    delete[] dynamicArray;
 
-//clean
-delete [] dynamicArray;
-
-return 0;
-
+    return 0;
 }
